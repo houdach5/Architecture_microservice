@@ -1,0 +1,31 @@
+<div class="container">
+
+  @if (customers) {
+    <table class="table">
+
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <td>
+          <button class="btn btn-success" (click)="getOrders(c:)">Orders</button>
+        </td>
+      </tr>
+      </thead>
+
+      <tbody>
+        @for (p of customers._embedded.customers; track p.id) {
+          <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.email}}</td>
+          </tr>
+        }
+      </tbody>
+
+    </table>
+  }
+
+</div>
+
